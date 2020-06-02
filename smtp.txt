@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<connectionStrings>
+		<add name="SikkiFredConnectionString" connectionString="Data Source=DESKTOP-A0HLQC7\TASHI; Initial Catalog=SikkimFredDatabase;User ID=sa; Password=qwerty123;"/>
+	</connectionStrings>
+	<appSettings>
+		<add key="smtpHost" value="smtp.gmail.com"/>
+		<add key="smtpPort" value="587"/>
+		<add key="smtpUsername" value="sikkimfred2020@gmail.com"/>
+		<add key="smtpPassword" value="sikkimfredgangtok@2020"/>
+		<add key="fromEmailId" value="tatshbhu@gmail.com"/>
+		<add key="passwordEncryptionKey" value="9D44C0C38E5D48B0"/>
+		<add key="jwtTokenSecret" value="5B360E8A4F5B423394A9"/>
+	</appSettings>
+</configuration>
