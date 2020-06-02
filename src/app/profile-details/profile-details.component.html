@@ -1,0 +1,658 @@
+<style>
+
+    .my-app {
+         background-color: #fbfbfd;
+         color: #3e3f42;
+         font-family: Roboto, Arial, sans-serif;
+         font-size: 14px;
+    }
+    /* My navbar */
+     .my-navbar {
+         padding: 1rem 1.875rem;
+         box-shadow: 0 0 1px #eaedf3;
+    }
+     .my-navbar__logo {
+         display: flex;
+         align-items: center;
+         margin-right: 1.875rem;
+         font-size: 1rem;
+         font-weight: 500;
+    }
+     .navbar-light .my-navbar__logo {
+         color: #3e3f42;
+    }
+     .my-navbar__logo-icon {
+         margin-right: 0.875rem;
+    }
+     .my-navbar-button {
+         padding: 0;
+         border: none;
+         background: none;
+    }
+     .my-navbar-button + .my-navbar-button {
+         margin-left: 1rem;
+    }
+     .navbar-nav {
+         padding-left: 0.937rem;
+         border-left: 1px solid #eaedf3;
+    }
+     .navbar-expand-lg .navbar-nav .nav-link {
+         padding-right: 0.937rem;
+         padding-left: 0.937rem;
+    }
+     .navbar-light .navbar-nav .nav-link {
+         color: #6b6c6f;
+    }
+     .navbar-light .navbar-nav .active > .nav-link {
+         color: #1665d8;
+    }
+    /* Content header */
+     .my-app__header {
+         padding-top: 1.875rem;
+         padding-bottom: 1.875rem;
+         border-bottom: 1px solid #eee;
+         background-color: #fff;
+    }
+     .my-app__header-inner {
+         display: flex;
+    }
+     .my-app__header-text {
+         flex: 1;
+    }
+     .my-app__header-title {
+         margin: 0 0 0.625rem;
+         font-size: 22px;
+         font-weight: 400;
+         line-height: 32px;
+    }
+     .my-action-buttons {
+         display: flex;
+    }
+     .my-action-button {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         border: none;
+         background: none;
+         line-height: 1;
+    }
+     .my-action-button:hover, .my-action-button:active, .my-action-button:focus {
+         outline: none;
+    }
+     .my-action-button__icon {
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         width: 54px;
+         height: 54px;
+         margin-bottom: 0.875rem;
+         border: 1px solid #e2e5ed;
+         border-radius: 54px;
+         color: #1665d8;
+         object-fit: none;
+    }
+     .my-app__body {
+         padding-top: 1.875rem;
+         padding-bottom: 1.875rem;
+    }
+    /* My card */
+     .my-card:not(:last-child) {
+         margin-bottom: 1.875rem;
+    }
+     .my-card__header {
+         display: flex;
+         padding: 1.5rem 1.875rem;
+         border-width: 0 0 1px;
+        /* border-bottom: 1px solid #eaedf3;
+         */
+         border-color: rgba(0, 0, 0, .125);
+         background: none;
+    }
+     .my-card__header-title {
+         flex: 1;
+         margin: 0;
+         font-size: 18px;
+         font-weight: 500;
+    }
+     .my-card__header-link {
+         color: #9ea0a5;
+        /* 14px is default font size */
+    }
+     .my-card__header-link:hover, .my-card__header-link:focus {
+         color: #9ea0a5;
+    }
+     .my-card__body {
+         padding: 1.5rem 1.875rem;
+    }
+    /* My list */
+     .my-list-item {
+         display: flex;
+         padding: 1rem 1.875rem;
+    }
+     .my-list-item__date, .my-list-item__text, .my-list-item__fee {
+         display: flex;
+         flex-direction: column;
+    }
+     .my-list-item__date {
+         flex-direction: column-reverse;
+         margin-right: 25px;
+         color: #9ea0a5;
+    }
+     .my-list-item__date-day {
+         font-size: 18px;
+         line-height: 22px;
+    }
+     .my-list-item__date-month {
+         margin-bottom: 4px;
+         font-size: 12px;
+         font-weight: 500;
+         line-height: 14px;
+         text-transform: uppercase;
+    }
+     .my-list-item__text {
+         flex: 1;
+    }
+     .my-list-item__text-title {
+         margin: 0 0 7px;
+        /* 14px is default font size */
+         font-size: 14px;
+         font-weight: 500;
+    }
+     .my-list-item__text-description {
+         margin: 0;
+         color: #9ea0a5;
+         font-size: 12px;
+         line-height: 14px;
+    }
+     .my-list-item__fee {
+         text-align: right;
+    }
+     .my-list-item__fee-delta {
+         color: #3bad4b;
+        /* 14px is default font size */
+         font-weight: 500;
+    }
+     .my-list-item__fee-currency {
+         color: #9ea0a5;
+         font-size: 12px;
+    }
+    /* My inline-list */
+     .my-list-inline li:not(:last-child) {
+         margin-bottom: 0.5rem;
+    }
+    /* My dl (definition list */
+     @media (min-width: 992px) {
+         .my-dl dt {
+             float: left;
+             color: #9ea0a5;
+             font-weight: 400;
+        }
+         .my-dl dd {
+             text-align: right;
+        }
+    }
+    /* My typography */
+     .my-text-headline {
+         margin: 0;
+         font-size: 30px;
+         font-weight: 400;
+    }
+     .my-text-overline {
+         margin-bottom: 0.75rem;
+         color: #9ea0a5;
+         font-size: 12px;
+         font-weight: 500;
+         text-transform: uppercase;
+    }
+    /* Divider */
+     .my-divider {
+         margin: 1.25rem 0;
+    }
+    /* Input */
+     .my-input {
+         max-width: 186px;
+    }
+     .my-select {
+         border-color: #d8dce6;
+         box-shadow: 0 1px 2px rgba(0, 0, 0, .08);
+         font-size: 14px;
+    }
+    /* Bootstrap custom fixes */
+     @media (max-width: 1199px) {
+         .container {
+             max-width: 100%;
+        }
+    }
+     .my-alert {
+         display: flex;
+         align-items: flex-start;
+         margin-bottom: 1.875rem;
+         padding-top: 0.937rem;
+         padding-bottom: 0.937rem;
+         border: none;
+         box-shadow: none;
+    }
+     .my-alert.alert-info {
+         background-color: #1665d8;
+         color: #fff;
+    }
+     .my-alert__icon {
+         margin-right: 1.25rem;
+    }
+    /* List icon */
+     .list__icon {
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         width: 64px;
+         height: 40px;
+         border: 1px solid #e2e5ed;
+         border-radius: 0.25rem;
+    }
+     
+    
+    </style>
+
+
+<div class="my-app">
+    <!-- <header class="my-header">
+      <nav class="my-navbar navbar navbar-expand-lg navbar-light bg-white">
+      
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
+          <div class="my-navbar-buttons">
+            <button class="my-navbar-button">
+              <img class="my-navbar-button__icon" src="./images/icon-settings.svg" alt>
+            </button>
+            <button class="my-navbar-button">
+              <img class="my-navbar-button__icon" src="./images/icon-notifications.svg" alt>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header> -->
+    <main>
+      <!-- Begin content header -->
+      <section class="my-app__header">
+        <div class="container">
+          <div class="my-app__header-inner">
+            <div class="my-app__header-text media">
+             <img src="/images/dataresult[1][0].imagedata" style="width: 80px;">
+              <div class="media-body">
+                <h1 class="my-app__header-title">Hi there, Lorem!</h1>
+                <!-- <div class="my-input input-group mb-3">
+                 <button class="btn btn-outline-dark" >Edit Profile</button>
+                </div>-->
+              </div> 
+            </div>
+            <div class="my-action-buttons my-app__header__buttons">
+              <!-- <button class="my-action-button">
+                <img class="my-action-button__icon" src="./images/icon-money.svg" alt>
+                Send money
+              </button> -->
+           
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End content header -->
+
+      <!-- Begin content body -->
+      <section class="my-app__body">
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <!-- Begin Payment Balance card -->
+              <div class="my-card card">
+                <div class="my-card__header card-header">
+                  <div class="my-card__header-title">
+                    <div class="my-text-overline">Employee Code</div>
+                    <h3 class="my-text-headline">172/pao</h3>
+                  </div>
+                  <!-- <a class="my-card__header-link" href="#">Details →</a> -->
+                </div>
+                <div class="my-card__body card-body">
+                  <div class="my-text-overline">Profile Details</div>
+                  <dl class="my-list my-list--definitions my-dl">
+                    <dt>Date Of Birth</dt>
+                    <dd>21/02/98</dd>
+                    <dt>Gender</dt>
+                    <dd>Male</dd>
+                    <dt>Mobile Number</dt>
+                    <dd>8319339945</dd>
+                    <dt>Email</dt>
+                    <dd>jnaman345@gmail.com</dd>
+
+                    <dt>Religion</dt>
+                    <dd>Hindu</dd>
+                    <dt>Aadhar Number</dt>
+                    <dd>a123456789123le</dd>
+                    <dt>Department</dt>
+                    <dd>--</dd>
+                    <dt>District</dt>
+                    <dd>-</dd>
+
+                    <dt>Designation</dt>
+                    <dd>-</dd>
+                    <!-- <dt>Gender</dt>
+                    <dd>Male</dd>
+                    <dt>Mobile Number</dt>
+                    <dd>8319339945</dd>
+                    <dt>Email</dt>
+                    <dd>jnaman345@gmail.com</dd> -->
+                    
+                  </dl>
+                 
+                
+                </div>
+                
+              </div>
+              <!-- End Payment Balance card -->
+
+           
+            </div>
+
+            <div class="col-4">
+             
+
+              <!-- Begin Pending card -->
+              <div class="my-card card">
+                <div class="my-card__header card-header bg-primary" style="height:50px">
+                  <h3 class="my-card__header-title card-title" style="color:white;margin-top:-10px;">Insurance Details</h3>
+                  <!-- <a class="my-card__header-link" href="#">See all →</a> -->
+                </div>
+                <ul class="my-list list-group list-group-flush">
+                  
+                 
+                  
+                  <li class="my-list-item list-group-item">
+                   
+                    <div class="my-list-item__text">
+                      <h4 class="my-list-item__text-title">Insurance ID</h4>
+                  
+                    </div>
+                    <div class="my-list-item__fee">
+                      <a class="my-card__header-link quiz" id="dataresult[0][i].iddata" style="cursor: pointer;" >1</a>
+                    </div>
+                  </li>
+            
+            
+                  <li class="my-list-item list-group-item">
+                   
+                    <div class="my-list-item__text">
+                      <h4 class="my-list-item__text-title">Company Name</h4>
+                  
+                    </div>
+                    <div class="my-list-item__fee">
+                      <a class="my-card__header-link quiz" id="dataresult[0][i].iddata" style="cursor: pointer;" >Any Bank</a>
+                    </div>
+                  </li>
+
+
+                  <li class="my-list-item list-group-item">
+                   
+                    <div class="my-list-item__text">
+                      <h4 class="my-list-item__text-title">Branch Name </h4>
+                  
+                    </div>
+                    <div class="my-list-item__fee">
+                      <a class="my-card__header-link quiz" id="dataresult[0][i].iddata" style="cursor: pointer;" >Any branch</a>
+                    </div>
+                  </li>
+
+
+                  <li class="my-list-item list-group-item">
+                   
+                    <div class="my-list-item__text">
+                      <h4 class="my-list-item__text-title">Policy Number</h4>
+                  
+                    </div>
+                    <div class="my-list-item__fee">
+                      <a class="my-card__header-link quiz" id="dataresult[0][i].iddata" style="cursor: pointer;" >123456789</a>
+                    </div>
+                  </li>
+
+             
+                  <li class="my-list-item list-group-item">
+                   
+                    <div class="my-list-item__text">
+                      <h4 class="my-list-item__text-title">Premium Amount </h4>
+                  
+                    </div>
+                    <div class="my-list-item__fee">
+                      <a class="my-card__header-link quiz" id="dataresult[0][i].iddata" style="cursor: pointer;" >7706</a>
+                    </div>
+                  </li>
+
+                  <li class="my-list-item list-group-item">
+                   
+                    <div class="my-list-item__text">
+                      <h4 class="my-list-item__text-title">PA Code</h4>
+                  
+                    </div>
+                    <div class="my-list-item__fee">
+                      <a class="my-card__header-link quiz" id="dataresult[0][i].iddata" style="cursor: pointer;" >1465</a>
+                    </div>
+                  </li>
+
+                
+                
+                </ul>
+              </div>
+              <!-- End Pending card -->
+
+            
+            </div>
+
+            <div class="col-4">
+               
+  
+                <!-- Begin Pending card -->
+                <div class="my-card card">
+                  <div class="my-card__header card-header bg-primary" style="height:50px">
+                    <h3 class="my-card__header-title card-title" style="color:white;margin-top:-10px;">Loan Details</h3>
+                    <!-- <a class="my-card__header-link" href="#">See all →</a> -->
+                  </div>
+                  <ul class="my-list list-group list-group-flush">
+                    
+                   
+                    
+                    <li class="my-list-item list-group-item">
+                   
+                        <div class="my-list-item__text">
+                          <h4 class="my-list-item__text-title">Loan ID</h4>
+                      
+                        </div>
+                        <div class="my-list-item__fee">
+                          <a class="my-card__header-link quiz" id="dataresult[0][i].iddata" style="cursor: pointer;" >1</a>
+                        </div>
+                      </li>
+                
+                
+                      <li class="my-list-item list-group-item">
+                       
+                        <div class="my-list-item__text">
+                          <h4 class="my-list-item__text-title">Bank Name</h4>
+                      
+                        </div>
+                        <div class="my-list-item__fee">
+                          <a class="my-card__header-link quiz" id="dataresult[0][i].iddata" style="cursor: pointer;" >Any Bank</a>
+                        </div>
+                      </li>
+    
+    
+                      <li class="my-list-item list-group-item">
+                       
+                        <div class="my-list-item__text">
+                          <h4 class="my-list-item__text-title">Branch Name </h4>
+                      
+                        </div>
+                        <div class="my-list-item__fee">
+                          <a class="my-card__header-link quiz" id="dataresult[0][i].iddata" style="cursor: pointer;" >Any branch</a>
+                        </div>
+                      </li>
+
+
+                      <li class="my-list-item list-group-item">
+                       
+                        <div class="my-list-item__text">
+                          <h4 class="my-list-item__text-title">IFSC Code </h4>
+                      
+                        </div>
+                        <div class="my-list-item__fee">
+                          <a class="my-card__header-link quiz" id="dataresult[0][i].iddata" style="cursor: pointer;" >1321</a>
+                        </div>
+                      </li>
+    
+    
+                      <li class="my-list-item list-group-item">
+                       
+                        <div class="my-list-item__text">
+                          <h4 class="my-list-item__text-title">Account Number</h4>
+                      
+                        </div>
+                        <div class="my-list-item__fee">
+                          <a class="my-card__header-link quiz" id="dataresult[0][i].iddata" style="cursor: pointer;" >123456789</a>
+                        </div>
+                      </li>
+    
+                 
+                      <li class="my-list-item list-group-item">
+                       
+                        <div class="my-list-item__text">
+                          <h4 class="my-list-item__text-title">Amount </h4>
+                      
+                        </div>
+                        <div class="my-list-item__fee">
+                          <a class="my-card__header-link quiz" id="dataresult[0][i].iddata" style="cursor: pointer;" >7706</a>
+                        </div>
+                      </li>
+    
+                      <li class="my-list-item list-group-item">
+                       
+                        <div class="my-list-item__text">
+                          <h4 class="my-list-item__text-title">Number of Installment</h4>
+                      
+                        </div>
+                        <div class="my-list-item__fee">
+                          <a class="my-card__header-link quiz" id="dataresult[0][i].iddata" style="cursor: pointer;" >1465</a>
+                        </div>
+                      </li>
+    
+                   
+                  
+                  </ul>
+                </div>
+                <!-- End Pending card -->
+  
+              
+              </div>
+
+
+
+
+            
+          </div>
+        </div>
+
+<br/>
+        <div class="container">
+            <div class="row">
+              <div class="col-4">
+                <!-- Begin Payment Balance card -->
+                <div class="my-card card">
+                  <div class="my-card__header card-header">
+                    <div class="my-card__header-title">
+                      <div class="my-text-overline">Bank Details</div>
+                     
+                    </div>
+                    <!-- <a class="my-card__header-link" href="#">Details →</a> -->
+                  </div>
+                  <div class="my-card__body card-body">
+
+                    <dl class="my-list my-list--definitions my-dl">
+                      <dt>Account Number</dt>
+                      <dd>12345675894</dd>
+                      <dt>Branch ID</dt>
+                      <dd>42</dd>
+                      <dt>Bank ID</dt>
+                      <dd>2</dd>
+                      
+                      
+                    </dl>
+                   
+                  
+                  </div>
+                  
+                </div>
+                <!-- End Payment Balance card -->
+  
+             
+              </div>
+  
+              <div class="col-8">
+                <!-- <div class="my-alert alert alert-info">
+                  <img class="my-alert__icon" src="./images/icon-alert.svg" alt>
+                  <span class="my-alert__text">
+                 Enjoy our Questions and Answers Quiz
+                  </span>
+                </div> -->
+  
+                <!-- Begin Pending card -->
+                <div class="my-card card">
+                  <div class="my-card__header card-header">
+                    <h3 class="my-card__header-title card-title">Joining & Retirement Date</h3>
+                    <!-- <a class="my-card__header-link" href="#">See all →</a> -->
+                  </div>
+                  <ul class="my-list list-group list-group-flush">
+                    
+                   
+                    
+                    <li class="my-list-item list-group-item">
+                       <div class="my-list-item__text">
+                        <h4 class="my-list-item__text-title">Date of Joining</h4>
+                         </div>
+                      <div class="my-list-item__fee">
+                        <a class="my-card__header-link quiz" id="dataresult[0][i].iddata" style="cursor: pointer;" >21/02/1998</a>
+                      </div>
+                    </li>
+
+                    <li class="my-list-item list-group-item">
+                        <div class="my-list-item__text">
+                         <h4 class="my-list-item__text-title">Date of Retirement</h4>
+                          </div>
+                       <div class="my-list-item__fee">
+                         <a class="my-card__header-link quiz" id="dataresult[0][i].iddata" style="cursor: pointer;" >21/02/1998</a>
+                       </div>
+                     </li>
+                  
+              
+                   
+                  
+                  </ul>
+                </div>
+                <!-- End Pending card -->
+  
+              
+              </div>
+  
+  
+  
+  
+  
+  
+              
+            </div>
+          </div>
+
+      </section>
+      <!-- End content body -->
+    </main>
+</div>
+
+
+<br/><br/>

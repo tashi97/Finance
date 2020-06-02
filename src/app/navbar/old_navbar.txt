@@ -1,0 +1,325 @@
+<style>
+   a {
+        color:blue
+    }
+    .navbar{
+      z-index:1 ;
+    }
+    .search {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+.search * {
+  outline: none;
+  box-sizing: border-box;
+}
+.search__wrapper {
+  position: relative;
+}
+.search__field {
+  width: 20px;
+  height: 50px;
+   padding: 0.35em 50px 0.35em 0;
+  border: 1px solid transparent;
+   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.search__field:focus {
+  width: 100%;
+   cursor: default;
+}
+.search__field:focus ~ .search__icon {
+  background-color: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.search__icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  font-size: 1.35em;
+  text-align: center;
+  border-color: transparent;
+  border-radius: 0%;
+  pointer-events: none;
+  display: inline-block;
+  transition: background-color 0.2s ease-in-out;
+}
+.search__field::-webkit-input-placeholder {
+  position: relative;
+  top: 0;
+  left: 0;
+  transition-property: top, color;
+  transition-duration: .1s;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+.search__field:-moz-placeholder {
+  position: relative;
+  top: 0;
+  left: 0;
+  transition-property: top, color;
+  transition-duration: .1s;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+.search__field::-moz-placeholder {
+  position: relative;
+  top: 0;
+  left: 0;
+  transition-property: top, color;
+  transition-duration: .1s;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+.search__field:-ms-input-placeholder {
+  position: relative;
+  top: 0;
+  left: 0;
+  transition-property: top, color;
+  transition-duration: .1s;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+.search__field::-webkit-input-placeholder[style*=hidden] {
+  color: #83b0c1;
+  font-size: .65em;
+  font-weight: normal;
+  top: -20px;
+  opacity: 1;
+  visibility: visible !important;
+}
+.search__field:-moz-placeholder[style*=hidden] {
+  color: #83b0c1;
+  font-size: .65em;
+  font-weight: normal;
+  top: -20px;
+  opacity: 1;
+  visibility: visible !important;
+}
+.search__field::-moz-placeholder[style*=hidden] {
+  color: #83b0c1;
+  font-size: .65em;
+  font-weight: normal;
+  top: -20px;
+  opacity: 1;
+  visibility: visible !important;
+}
+.search__field:-ms-input-placeholder[style*=hidden] {
+  color: #83b0c1;
+  font-size: .65em;
+  font-weight: normal;
+  top: -20px;
+  opacity: 1;
+  visibility: visible !important;
+}
+
+  
+</style>
+        
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:0px">
+            
+        <nav>
+            <a href="#">
+                <img src="./assets/logo1.png" style="width:100%;background-color:black"
+                alt="img" />
+            </a>
+           
+          
+          </nav>
+      
+
+          <nav class="navbar navbar-expand-lg navbar-light navbar-side " style="background-color: brown">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <a style="color:white" class="navbar-brand" [routerLink]="['/home']"><i class="fa fa-home" aria-hidden="true"></i></a>
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+            <button data-toggle="collapse-side" data-target=".side-collapse" type="button" class="navbar-toggle"><span class="sr-only">Toggle navigation</span>  <span class="icon-bar"></span>  <span class="icon-bar"></span>  <span class="icon-bar"></span> 
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+              
+               
+                <li class="nav-item dropdown">
+                        <a style="color:white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Divisions
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a [routerLink]="['/home']" class="dropdown-item">FRBM</a>
+                                <div class="dropdown-divider"></div>
+                                <a [routerLink]="['/home']" class="dropdown-item">Accounts</a>
+                                <div class="dropdown-divider"></div>
+                                <a [routerLink]="['/home']" class="dropdown-item">Loan</a>   
+                                <div class="dropdown-divider"></div>
+                                <a [routerLink]="['/home']" class="dropdown-item">FCD</a>
+                                <div class="dropdown-divider"></div>
+                                <a [routerLink]="['/home']" class="dropdown-item">Budget</a>
+                                <div class="dropdown-divider"></div>
+                                <a href = "http://www.sikkimtax.gov.in/" class="dropdown-item">Commercial Tax</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="http://sikkimlotteries.com/" class="dropdown-item">State Lotteries</a>
+                                <div class="dropdown-divider"></div>
+                                <a [routerLink]="['/pension']" class="dropdown-item">Pension</a>
+                                <div class="dropdown-divider"></div>
+                                <a [routerLink]="['/home']" class="dropdown-item">GPF/GIS/CPF</a>
+                                <div class="dropdown-divider"></div>
+                                <a [routerLink]="['/home']" class="dropdown-item">Internal Audit</a>
+                                <div class="dropdown-divider"></div>
+                                <a [routerLink]="['/home']" class="dropdown-item">LFA</a>
+                                
+                         
+                        </div>
+                      </li>
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                <li class="nav-item dropdown">
+                  <a style="color:white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Orders
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                       <a [routerLink]="['/letter']" class="dropdown-item">Letters</a>
+
+                       <div class="dropdown-divider"></div>
+                      <a [routerLink]="['/notification']" class="dropdown-item">Notifications</a>
+                      <div class="dropdown-divider"></div>
+                <a [routerLink]="['/home']" class="dropdown-item">Rules</a>
+                <div class="dropdown-divider"></div>
+                <a [routerLink]="['/DA-Enhancement']" class="dropdown-item">D.A.</a>
+                <div class="dropdown-divider"></div>
+                <a [routerLink]="['/home']" class="dropdown-item">Circulars</a>
+                <div class="dropdown-divider"></div>
+                <a [routerLink]="['/home']" class="dropdown-item">ACT</a>
+                <div class="dropdown-divider"></div>
+                <a [routerLink]="['/office']" class="dropdown-item">Office Memo.</a>
+                <div class="dropdown-divider"></div>
+                <a [routerLink]="['/home']" class="dropdown-item">Press Release</a>
+                <div class="dropdown-divider"></div>
+                <a [routerLink]="['/gazatte']" class="dropdown-item">Gazette</a>
+                   
+                  </div>
+                </li>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <li class="nav-item dropdown">
+                        <a style="color:white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Employees Corner
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a [routerLink]="['/employees-vacancies']" class="dropdown-item">Vacancies</a>
+                                <div class="dropdown-divider"></div>
+                                <a [routerLink]="['/transfer-and-promotion']" class="dropdown-item"> Transfer/Promotion</a>
+                                <div class="dropdown-divider"></div>
+                                <a [routerLink]="['/forms']" class="dropdown-item">Forms</a>
+                                <div class="dropdown-divider"></div>
+                                <a [routerLink]="['/training']" class="dropdown-item">Trainings</a>
+                         
+                        </div>
+                      </li>
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      
+                <li class="nav-item dropdown">
+                        <a  style="color:white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                RTI
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a href="http://sikkimfred.gov.in/RTI/RTI%20Notification.pdf" class="dropdown-item" >Notification</a>
+                                <div class="dropdown-divider"></div>
+                <a href="http://sikkimfred.gov.in/RTI/rti-act%20(1).pdf" class="dropdown-item" >ACT</a>
+               
+            
+                         
+                        </div>
+                      </li>
+
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      <li class="nav-item dropdown">
+                        <a  style="color:white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                SIFMS
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a href="http://sikkimfred.gov.in/Office%20Memorandum/Documents/OM_Reconciliation_of_Accounts.pdf" class="dropdown-item" >Reconciliation of Accounts</a>
+                                <div class="dropdown-divider"></div>
+                <a href="http://sikkimfred.gov.in/SIFMS/Documents/Support%20for%20SIFMSNew.pdf" class="dropdown-item" >Contacts for SIFMS Help Desk.</a>
+               
+                <div class="dropdown-divider"></div>
+                  <a href="http://sikkimfred.gov.in/SIFMS/Documents/Sikkim_Integrated_Financial_Management_System.pdf" class="dropdown-item" >Instructions on SIFMS I.</a>
+                  <div class="dropdown-divider"></div>
+  <a href="http://sikkimfred.gov.in/SIFMS/Documents/Sikkim_Integrated_Financial_Management_System.pdf" class="dropdown-item" >Instructions on SIFMS II.</a>
+  <div class="dropdown-divider"></div>
+  <a href="http://sikkimfred.gov.in/Office%20Memorandum/Documents/OFFICE%20MEMORANDUM%20%20SIFMS.pdf" class="dropdown-item" >Office Memorandum on implementation of SIFMS.
+  </a>
+ 
+            
+                         
+                        </div>
+                      </li>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="nav-item">
+                        <a style="color:white" class="nav-link " [routerLink]="['/contactus']" tabindex="-1" aria-disabled="true">Contact us</a>
+                      </li>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      <li class="nav-item dropdown">
+                        <a  style="color:white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa fa-user" aria-hidden="true"></i>  Login
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a [routerLink]="['/Admin-Login']" class="dropdown-item" >Login</a>
+                                <div class="dropdown-divider"></div>
+                <a [routerLink]="['/DDO-Registeration']" class="dropdown-item" >DDO Registeration</a>
+               
+                <div class="dropdown-divider"></div>
+                <a [routerLink]="['/RCO-Registeration']" class="dropdown-item" >MIS/HOD/RCO User Registration</a>
+              
+                        
+                        </div>
+                      </li>
+
+
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                  <div class="search__wrapper">
+                      <input type="text" name="" placeholder="Search for..." class="search__field form-control">
+                      <button type="submit" class="fa fa-search search__icon"></button>
+                    </div>
+              </form>
+            </div>
+          </nav>
+        </div>
+    </div>
+    </div>
+
+      <hr style="background-color:#36DAEA;height:4px;margin:0px"/>
+ 
