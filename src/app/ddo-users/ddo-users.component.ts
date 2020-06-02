@@ -81,7 +81,7 @@ alert('User Details Sent to Email Id')
     const id = $(this).attr('id')
     console.log("id hai",id)
 
-    fetch('http://sikkimfred.local.api/api/DDORegistration/' + id, {
+    fetch('http://sikkimfred.local.api/api/user/' + id, {
       method: 'DELETE',
     }).then(res => res.text()) // or res.json()
     .then(res => refresh())

@@ -40,7 +40,6 @@ import { DdoReportComponent } from './ddo-report/ddo-report.component';
 import { SbsComponent } from './sbs/sbs.component';
 import { DdoUsersComponent } from './ddo-users/ddo-users.component';
 import { RcoUsersComponent } from './rco-users/rco-users.component';
-import { SuperAdminUsersComponent } from './super-admin-users/super-admin-users.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { AdminnAvbarComponent } from './adminn-avbar/adminn-avbar.component';
 import { RecoverUserPasswordComponent } from './recover-user-password/recover-user-password.component';
@@ -50,7 +49,8 @@ import { ProfileDetailsComponent } from './profile-details/profile-details.compo
 import { PayslipDetailsComponent } from './payslip-details/payslip-details.component';
 import { ReportsFormComponent } from './reports-form/reports-form.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
-import { SbsadminComponent } from './sbsadmin/sbsadmin.component';
+import { SbsAdminRegistrationComponent } from './sbs-admin-registration/sbs-admin-registration.component';
+import { SbsAdminUserComponent } from './sbs-admin-user/sbs-admin-user.component';
 
 @NgModule({
   declarations: [
@@ -92,8 +92,7 @@ import { SbsadminComponent } from './sbsadmin/sbsadmin.component';
     SbsComponent,
     DdoUsersComponent,
     RcoUsersComponent,
-    SuperAdminUsersComponent,
-    UpdatePasswordComponent,
+      UpdatePasswordComponent,
     AdminnAvbarComponent,
     RecoverUserPasswordComponent,
     GpfDetailsComponent,
@@ -102,7 +101,8 @@ import { SbsadminComponent } from './sbsadmin/sbsadmin.component';
     PayslipDetailsComponent,
     ReportsFormComponent,
     AdminUsersComponent,
-    SbsadminComponent
+    SbsAdminRegistrationComponent,
+    SbsAdminUserComponent
   ],
   imports: [
     BrowserModule,

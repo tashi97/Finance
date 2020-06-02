@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 declare  var jQuery:  any;
 @Component({
-  selector: 'app-rco-users',
-  templateUrl: './rco-users.component.html',
-  styleUrls: ['./rco-users.component.css']
+  selector: 'app-sbs-admin-user',
+  templateUrl: './sbs-admin-user.component.html',
+  styleUrls: ['./sbs-admin-user.component.css']
 })
-export class RcoUsersComponent implements OnInit {
+export class SbsAdminUserComponent implements OnInit {
 
   constructor() { }
 
@@ -13,8 +13,8 @@ export class RcoUsersComponent implements OnInit {
     (function ($) {
       $(document).ready(function(){
        
-       $.getJSON('http://sikkimfred.local.api/api/user/rco',data=>{
-        console.log(data)
+       $.getJSON('http://sikkimfred.local.api/api/user/admin',data=>{
+        
        makeTable(data)
         
        })
@@ -25,8 +25,7 @@ export class RcoUsersComponent implements OnInit {
           <tr>
               <th>SL No.</th> 
             <th>Name</th>
-            <th>Reg. Type</th>
-            <th>User ID</th>
+           <th>User ID</th>
             </tr>
         </thead>
        
@@ -36,10 +35,9 @@ export class RcoUsersComponent implements OnInit {
         table+=`  <tr>
             <td>${i+1}</td>
             <td>${item.emailId}</td>
-            <td>${item.registrationType}</td>
-            <td>${item.id}</td>
+              <td>${item.id}</td>
           
-           <td><button class="btn btn-primary send" email="${item.emailId}">Send Details</button></td>
+            <td><button class="btn btn-primary send" email="${item.emailId}">Send Details</button></td>
            <td><button class="btn btn-danger delete" id="${item.id}">Delete User</button></td>
           </tr>`
         })
@@ -48,7 +46,7 @@ export class RcoUsersComponent implements OnInit {
       $('#result').html(table)
       }
 
-      $('#result').on('click', '.send', function() {
+   $('#result').on('click', '.send', function() {
           var url = 'http://local.api.com/api/user/recoverpassword';
          
        
@@ -78,7 +76,7 @@ alert('User Details Sent to Email Id')
     
     $('#result').on('click', '.delete', function() {
       const id = $(this).attr('id')
-      console.log("id yo ho",id)
+      console.log("id hai",id)
 
       fetch('http://sikkimfred.local.api/api/user/' + id, {
         method: 'DELETE',
@@ -90,13 +88,13 @@ alert('User Details Sent to Email Id')
 
     function refresh(){
   
-      $.getJSON('http://sikkimfred.local.api/api/user/rco',data=>{
+      $.getJSON('http://sikkimfred.local.api/api/user/admin',data=>{
          makeTable(data)
          alert("User Deleted Successfully")
         })
     }
 
-    
+
 
       });
     })(jQuery);

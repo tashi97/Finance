@@ -14,7 +14,7 @@ export class RcoReportComponent implements OnInit {
     (function ($) {
       $(document).ready(function(){
        
-       $.getJSON('http://sikkimfred.local.api/api/RCORegistration/all',data=>{
+       $.getJSON('http://sikkimfred.local.api/api/RCORegistration/pending',data=>{
         
        makeTable(data)
         
@@ -108,7 +108,7 @@ export class RcoReportComponent implements OnInit {
 
 function refresh(){
   
-  $.getJSON('http://sikkimfred.local.api/api/RCORegistration/all',data=>{
+  $.getJSON('http://sikkimfred.local.api/api/RCORegistration/pending',data=>{
      makeTable(data)
      alert("Request Deleted Successfully")
     })
@@ -118,7 +118,7 @@ function refresh(){
 
 function refresh1(){
   
-  $.getJSON('http://sikkimfred.local.api/api/RCORegistration/all',data=>{
+  $.getJSON('http://sikkimfred.local.api/api/RCORegistration/pending',data=>{
      makeTable(data)
      alert("Request Accepted Successfully")
     })

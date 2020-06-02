@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SuperAdminUsersComponent } from './super-admin-users.component';
+import { SbsAdminUserComponent } from './sbs-admin-user.component';
 
-describe('SuperAdminUsersComponent', () => {
-  let component: SuperAdminUsersComponent;
-  let fixture: ComponentFixture<SuperAdminUsersComponent>;
+describe('SbsAdminUserComponent', () => {
+  let component: SbsAdminUserComponent;
+  let fixture: ComponentFixture<SbsAdminUserComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SuperAdminUsersComponent ]
+      declarations: [ SbsAdminUserComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SuperAdminUsersComponent);
+    fixture = TestBed.createComponent(SbsAdminUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

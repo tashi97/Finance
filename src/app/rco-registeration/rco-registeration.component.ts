@@ -36,7 +36,10 @@ export class RcoRegisterationComponent implements OnInit {
           // else if ($('#tanNumber').val() == null || $('#tanNumber').val() == "null" || $('#tanNumber').val() == [] || $('#tanNumber').val() == "") alert("Enter Tan Number...")
           else if ($('#emailId').val() == null || $('#emailId').val() == "null" || $('#emailId').val() == [] || $('#emailId').val() == "") alert("Enter Email ID...")
           else if ($('#contactNumber').val() == null || $('#contactNumber').val() == "null" || $('#contactNumber').val() == [] || $('#contactNumber').val() == "") alert("Enter Contact Number...")
-          else {
+         else if(!$('#contactNumber').val().match('[0-9]{10}'))  {
+          alert("Please put 10 digit mobile number");
+         }
+         else {
             var url ='http://sikkimfred.local.api/api/RCORegistration'
             let insertobj = {
               RegistrationType : $('#RegistrationType').val(),
@@ -58,15 +61,23 @@ export class RcoRegisterationComponent implements OnInit {
               headers : new Headers({
                'Content-Type': 'application/json'
               })
-              }).then(res=>res.text())
+              }).then(res=>res.json())
               .catch(error => console.error("Error",error))
               .then (result => {
-              console.log("reult" ,result)
-             if(result){
-              alert("Successfully Inserted");
-              done()
+              console.log("result",result)
+             if(result.errors){
+              alert("Enter Correct Emailid format");
+              
             } 
-             else alert("An error occured..Please try again later");
+            else if(result.error){
+              alert("Emailid already exists")
+              
+            }
+          
+             else{
+              alert("Succesfully Inserted");
+              done()
+             }
               
               })
           }
@@ -80,9 +91,9 @@ export class RcoRegisterationComponent implements OnInit {
 
           $.each(data, (i, item) => {
             if (item.id == selectedid) {
-              $(`#${id}`).append($('<option selected>').val(item.departmentId).text(item.departmentName))
+              $(`#${id}`).append($('<option selected>').val(item.id).text(item.name))
             } else {
-              $(`#${id}`).append($('<option>').val(item.departmentId).text(item.departmentName))
+              $(`#${id}`).append($('<option>').val(item.id).text(item.name))
             }
           })
         }

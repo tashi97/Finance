@@ -33,7 +33,7 @@ import {FeedbackReportComponent} from "./feedback-report/feedback-report.compone
 import { DdoReportComponent } from "./ddo-report/ddo-report.component";
 import { DdoUsersComponent } from "./ddo-users/ddo-users.component";
 import { RcoUsersComponent } from "./rco-users/rco-users.component";
-import { SuperAdminUsersComponent } from "./super-admin-users/super-admin-users.component";
+import { SbsAdminUserComponent } from "./sbs-admin-user/sbs-admin-user.component";
 import { SbsComponent } from "./sbs/sbs.component";
 import {UpdatePasswordComponent} from "./update-password/update-password.component";
 import {RecoverUserPasswordComponent} from "./recover-user-password/recover-user-password.component";
@@ -41,7 +41,8 @@ import {GpfDetailsComponent} from "./gpf-details/gpf-details.component";
 import {ProfilePayslipComponent} from "./profile-payslip/profile-payslip.component";
 import {ProfileDetailsComponent} from "./profile-details/profile-details.component";
 import {PayslipDetailsComponent} from "./payslip-details/payslip-details.component";
-import {ReportsFormComponent} from "./reports-form/reports-form.component"
+import {ReportsFormComponent} from "./reports-form/reports-form.component";
+import {SbsAdminRegistrationComponent} from "./sbs-admin-registration/sbs-admin-registration.component";
 
 const routes: Routes = [
   { path: 'home',             component: HomeComponent },
@@ -76,7 +77,7 @@ const routes: Routes = [
   {path : 'ddo-report',component:DdoReportComponent},  
   {path:'ddo-users',component:DdoUsersComponent},
   {path:'rco-users',component:RcoUsersComponent},
-  {path:'super-admin-users',component:SuperAdminUsersComponent},
+  {path:'super-admin-users',component:SbsAdminUserComponent},
   {path:'sbs',component:SbsComponent},
   {path:'update-password', component:UpdatePasswordComponent},
   {path:'recover-user-password',component:RecoverUserPasswordComponent},
@@ -84,7 +85,8 @@ const routes: Routes = [
   {path :'gpf-details',component:GpfDetailsComponent},
   {path : 'profile-and-payslip',component:ProfilePayslipComponent},
   {path : 'profile-details', component:ProfileDetailsComponent},
-  {path : 'payslip-details', component:PayslipDetailsComponent}
+  {path : 'payslip-details', component:PayslipDetailsComponent},
+  {path : "sbs-admin" , component:SbsAdminRegistrationComponent}
 ];
 
 @NgModule({

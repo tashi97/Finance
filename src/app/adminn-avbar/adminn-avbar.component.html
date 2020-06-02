@@ -15,6 +15,12 @@
           <span class="nav-link-text">Feedback</span>
         </a>
       </li>
+       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+        <a class="nav-link" [routerLink]="['/sbs-admin']">
+          <i class="fa fa-fw fa-dashboard"></i>
+          <span class="nav-link-text">Add Amin</span>
+        </a>
+      </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
         <a class="nav-link" [routerLink]="['/ddo-report']">
           <i class="fa fa-fw fa-dashboard"></i>
@@ -35,7 +41,7 @@
           Users
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a [routerLink]="['/super-admin-users']" class="dropdown-item">Super Admin</a>
+          <a [routerLink]="['/super-admin-users']" class="dropdown-item">Admin</a>
           <div class="dropdown-divider"></div>
           <a [routerLink]="['/ddo-users']" class="dropdown-item">DDO </a>
 
